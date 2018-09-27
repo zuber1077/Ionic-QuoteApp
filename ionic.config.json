@@ -1,0 +1,7 @@
+{
+  "name": "fovnote",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
