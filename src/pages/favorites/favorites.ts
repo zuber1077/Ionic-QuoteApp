@@ -14,7 +14,7 @@ export class FavoritesPage {
   constructor(
     private quotesService: QuotesService,
     private modalCtrl: ModalController
-  ) {}
+    ) {}
 
   ionViewWillEnter() {
     this.quotes = this.quotesService.getFavoriteQuote();
@@ -37,4 +37,5 @@ export class FavoritesPage {
     });
     this.quotes.splice(position, 1);
   }
+
 }
