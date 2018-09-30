@@ -1,3 +1,4 @@
+import { SettingsService } from './../../services/settings';
 import { QuotePage } from './../quote/quote';
 import { QuotesService } from './../../services/quotes';
 import { Component } from '@angular/core';
@@ -13,7 +14,8 @@ export class FavoritesPage {
 
   constructor(
     private quotesService: QuotesService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private settingsService: SettingsService
     ) {}
 
   ionViewWillEnter() {
@@ -38,4 +40,11 @@ export class FavoritesPage {
     this.quotes.splice(position, 1);
   }
 
+  getBackground() {
+    return this.settingsService.isAltBackground() ? 'altQuoteBackground' : 'quoteBackground'
+  }
+
+  isAltBackground() {
+    return this.settingsService.isAltBackground();
+  }
 }
